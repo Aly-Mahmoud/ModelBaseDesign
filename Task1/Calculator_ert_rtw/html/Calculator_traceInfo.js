@@ -5,8 +5,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Calculator"] = {rtwname: "<Root>"};
 	this.rtwnameHashMap["<S1>"] = {sid: "Calculator:59"};
 	this.sidHashMap["Calculator:59"] = {rtwname: "<S1>"};
-	this.rtwnameHashMap["<S2>"] = {sid: "Calculator:71"};
-	this.sidHashMap["Calculator:71"] = {rtwname: "<S2>"};
+	this.rtwnameHashMap["<S2>"] = {sid: "Calculator:72"};
+	this.sidHashMap["Calculator:72"] = {rtwname: "<S2>"};
 	this.rtwnameHashMap["<Root>/Input"] = {sid: "Calculator:49"};
 	this.sidHashMap["Calculator:49"] = {rtwname: "<Root>/Input"};
 	this.rtwnameHashMap["<Root>/Input1"] = {sid: "Calculator:50"};
@@ -41,8 +41,6 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Calculator:67"] = {rtwname: "<Root>/From10"};
 	this.rtwnameHashMap["<Root>/From11"] = {sid: "Calculator:70"};
 	this.sidHashMap["Calculator:70"] = {rtwname: "<Root>/From11"};
-	this.rtwnameHashMap["<Root>/From12"] = {sid: "Calculator:75"};
-	this.sidHashMap["Calculator:75"] = {rtwname: "<Root>/From12"};
 	this.rtwnameHashMap["<Root>/From2"] = {sid: "Calculator:17"};
 	this.sidHashMap["Calculator:17"] = {rtwname: "<Root>/From2"};
 	this.rtwnameHashMap["<Root>/From3"] = {sid: "Calculator:22"};
@@ -75,8 +73,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Calculator:56"] = {rtwname: "<Root>/If"};
 	this.rtwnameHashMap["<Root>/If Action Subsystem"] = {sid: "Calculator:59"};
 	this.sidHashMap["Calculator:59"] = {rtwname: "<Root>/If Action Subsystem"};
-	this.rtwnameHashMap["<Root>/If Action Subsystem1"] = {sid: "Calculator:71"};
-	this.sidHashMap["Calculator:71"] = {rtwname: "<Root>/If Action Subsystem1"};
+	this.rtwnameHashMap["<Root>/If Action Subsystem1"] = {sid: "Calculator:72"};
+	this.sidHashMap["Calculator:72"] = {rtwname: "<Root>/If Action Subsystem1"};
 	this.rtwnameHashMap["<Root>/Subtract"] = {sid: "Calculator:8"};
 	this.sidHashMap["Calculator:8"] = {rtwname: "<Root>/Subtract"};
 	this.rtwnameHashMap["<Root>/Unary Minus"] = {sid: "Calculator:53"};
@@ -103,12 +101,12 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Calculator:61"] = {rtwname: "<S1>/Action Port"};
 	this.rtwnameHashMap["<S1>/Output7"] = {sid: "Calculator:62"};
 	this.sidHashMap["Calculator:62"] = {rtwname: "<S1>/Output7"};
-	this.rtwnameHashMap["<S2>/In1"] = {sid: "Calculator:72"};
-	this.sidHashMap["Calculator:72"] = {rtwname: "<S2>/In1"};
-	this.rtwnameHashMap["<S2>/Action Port"] = {sid: "Calculator:73"};
-	this.sidHashMap["Calculator:73"] = {rtwname: "<S2>/Action Port"};
-	this.rtwnameHashMap["<S2>/Out1"] = {sid: "Calculator:74"};
-	this.sidHashMap["Calculator:74"] = {rtwname: "<S2>/Out1"};
+	this.rtwnameHashMap["<S2>/In1"] = {sid: "Calculator:73"};
+	this.sidHashMap["Calculator:73"] = {rtwname: "<S2>/In1"};
+	this.rtwnameHashMap["<S2>/Action Port"] = {sid: "Calculator:74"};
+	this.sidHashMap["Calculator:74"] = {rtwname: "<S2>/Action Port"};
+	this.rtwnameHashMap["<S2>/Output7"] = {sid: "Calculator:75"};
+	this.sidHashMap["Calculator:75"] = {rtwname: "<S2>/Output7"};
 	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
 	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
 }

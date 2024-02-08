@@ -2,7 +2,7 @@
 ## Makefile generated for component 'untitled'. 
 ## 
 ## Makefile     : untitled.mk
-## Generated on : Thu Feb 08 22:17:46 2024
+## Generated on : Thu Feb 08 22:58:58 2024
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/untitled.exe
 ## Product type : executable
 ## 
@@ -22,7 +22,7 @@ MAKEFILE                  = untitled.mk
 MATLAB_ROOT               = C:/PROGRA~1/POLYSP~1/R2021a
 MATLAB_BIN                = C:/PROGRA~1/POLYSP~1/R2021a/bin
 MATLAB_ARCH_BIN           = $(MATLAB_BIN)/win64
-START_DIR                 = D:/AliYi/AliYi/Documents/Knowledge/Academic/ITI/ES/Matlap - Banna/MBD/Task_Workspace/Task1
+START_DIR                 = D:/AliYi/AliYi/Documents/Knowledge/Academic/ITI/ES/Matlap - Banna/MBD/ModelBaseDesign/Task1
 SOLVER                    = 
 SOLVER_OBJ                = 
 CLASSIC_INTERFACE         = 0
@@ -155,7 +155,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_STAN
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/untitled_ert_rtw/untitled.c
+SRCS = $(START_DIR)/untitled_ert_rtw/rtGetInf.c $(START_DIR)/untitled_ert_rtw/rtGetNaN.c $(START_DIR)/untitled_ert_rtw/rt_nonfinite.c $(START_DIR)/untitled_ert_rtw/untitled.c
 
 MAIN_SRC = $(START_DIR)/untitled_ert_rtw/ert_main.c
 
@@ -165,7 +165,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = untitled.obj
+OBJS = rtGetInf.obj rtGetNaN.obj rt_nonfinite.obj untitled.obj
 
 MAIN_OBJ = ert_main.obj
 
@@ -282,6 +282,18 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 
 
 ert_main.obj : $(START_DIR)/untitled_ert_rtw/ert_main.c
+	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
+
+
+rtGetInf.obj : $(START_DIR)/untitled_ert_rtw/rtGetInf.c
+	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
+
+
+rtGetNaN.obj : $(START_DIR)/untitled_ert_rtw/rtGetNaN.c
+	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
+
+
+rt_nonfinite.obj : $(START_DIR)/untitled_ert_rtw/rt_nonfinite.c
 	$(CC) $(CFLAGS) -Fo"$@" $(subst /,\,"$<")
 
 

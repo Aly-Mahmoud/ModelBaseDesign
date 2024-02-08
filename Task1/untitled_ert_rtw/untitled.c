@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
- * C/C++ source code generated on : Thu Feb  8 22:17:36 2024
+ * C/C++ source code generated on : Thu Feb  8 22:58:53 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -29,59 +29,84 @@ RT_MODEL_untitled_T *const untitled_M = &untitled_M_;
 /* Model step function */
 void untitled_step(void)
 {
-  /* Outport: '<Root>/Output' incorporates:
-   *  Inport: '<Root>/Input'
-   *  Inport: '<Root>/Input1'
-   *  Sum: '<Root>/Add'
-   */
-  untitled_Y.Output = untitled_U.Input + untitled_U.Input1;
+  real_T rtb_SumofElements;
+  boolean_T tmp;
+  boolean_T tmp_0;
+  boolean_T tmp_1;
 
-  /* Outport: '<Root>/Output1' incorporates:
+  /* MinMax: '<Root>/Max' incorporates:
    *  Inport: '<Root>/Input'
-   *  Inport: '<Root>/Input1'
-   *  Sum: '<Root>/Subtract'
+   *  MinMax: '<Root>/Min'
    */
-  untitled_Y.Output1 = untitled_U.Input - untitled_U.Input1;
+  tmp = rtIsNaN(untitled_U.Input[1]);
+  if ((untitled_U.Input[0] > untitled_U.Input[1]) || tmp) {
+    rtb_SumofElements = untitled_U.Input[0];
+  } else {
+    rtb_SumofElements = untitled_U.Input[1];
+  }
 
-  /* Outport: '<Root>/Output2' incorporates:
+  tmp_1 = !rtIsNaN(untitled_U.Input[2]);
+  if ((!(rtb_SumofElements > untitled_U.Input[2])) && tmp_1) {
+    rtb_SumofElements = untitled_U.Input[2];
+  }
+
+  tmp_0 = rtIsNaN(untitled_U.Input[3]);
+  if ((rtb_SumofElements > untitled_U.Input[3]) || tmp_0) {
+    /* Outport: '<Root>/Output' */
+    untitled_Y.Output = rtb_SumofElements;
+  } else {
+    /* Outport: '<Root>/Output' */
+    untitled_Y.Output = untitled_U.Input[3];
+  }
+
+  /* End of MinMax: '<Root>/Max' */
+
+  /* MinMax: '<Root>/Min' incorporates:
    *  Inport: '<Root>/Input'
-   *  Inport: '<Root>/Input1'
-   *  Product: '<Root>/Divide'
    */
-  untitled_Y.Output2 = untitled_U.Input / untitled_U.Input1;
+  if ((untitled_U.Input[0] < untitled_U.Input[1]) || tmp) {
+    rtb_SumofElements = untitled_U.Input[0];
+  } else {
+    rtb_SumofElements = untitled_U.Input[1];
+  }
+
+  if ((!(rtb_SumofElements < untitled_U.Input[2])) && tmp_1) {
+    rtb_SumofElements = untitled_U.Input[2];
+  }
+
+  if ((rtb_SumofElements < untitled_U.Input[3]) || tmp_0) {
+    /* Outport: '<Root>/Output1' */
+    untitled_Y.Output1 = rtb_SumofElements;
+  } else {
+    /* Outport: '<Root>/Output1' */
+    untitled_Y.Output1 = untitled_U.Input[3];
+  }
+
+  /* Sum: '<Root>/Sum of Elements' incorporates:
+   *  Inport: '<Root>/Input'
+   */
+  rtb_SumofElements = ((untitled_U.Input[0] + untitled_U.Input[1]) +
+                       untitled_U.Input[2]) + untitled_U.Input[3];
+
+  /* Outport: '<Root>/Output2' */
+  untitled_Y.Output2 = rtb_SumofElements;
 
   /* Outport: '<Root>/Output3' incorporates:
-   *  Inport: '<Root>/Input'
-   *  Inport: '<Root>/Input1'
-   *  Product: '<Root>/Divide1'
+   *  MATLAB Function: '<Root>/MATLAB Function'
+   *  Product: '<Root>/Divide'
    */
-  untitled_Y.Output3 = untitled_U.Input * untitled_U.Input1;
-
-  /* Outport: '<Root>/Output4' incorporates:
-   *  Constant: '<Root>/Constant3'
-   *  Inport: '<Root>/Input2'
-   *  Sum: '<Root>/Add1'
-   */
-  untitled_Y.Output4 = untitled_U.Input2 + 1.0;
-
-  /* Outport: '<Root>/Output5' incorporates:
-   *  Constant: '<Root>/Constant5'
-   *  Inport: '<Root>/Input3'
-   *  Sum: '<Root>/Add2'
-   */
-  untitled_Y.Output5 = untitled_U.Input3 - 1.0;
-
-  /* Outport: '<Root>/Output6' incorporates:
-   *  Inport: '<Root>/Input4'
-   *  UnaryMinus: '<Root>/Unary Minus'
-   */
-  untitled_Y.Output6 = -untitled_U.Input4;
+  /* MATLAB Function 'MATLAB Function': '<S1>:1' */
+  /* '<S1>:1:3' y = numel(u); */
+  untitled_Y.Output3 = rtb_SumofElements / 4.0;
 }
 
 /* Model initialize function */
 void untitled_initialize(void)
 {
   /* Registration code */
+
+  /* initialize non-finites */
+  rt_InitInfAndNaN(sizeof(real_T));
 
   /* initialize error status */
   rtmSetErrorStatus(untitled_M, (NULL));

@@ -5,7 +5,7 @@
  *
  * Model version                  : 1.0
  * Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
- * C/C++ source code generated on : Thu Feb  8 22:58:53 2024
+ * C/C++ source code generated on : Thu Feb  8 23:14:49 2024
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Intel->x86-64 (Windows64)
@@ -23,8 +23,6 @@
 #endif                                 /* untitled_COMMON_INCLUDES_ */
 
 #include "untitled_types.h"
-#include "rt_nonfinite.h"
-#include "rtGetInf.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -37,15 +35,19 @@
 
 /* External inputs (root inport signals with default storage) */
 typedef struct {
-  real_T Input[4];                     /* '<Root>/Input' */
+  uint16_T Input;                      /* '<Root>/Input' */
+  uint16_T Input1;                     /* '<Root>/Input1' */
 } ExtU_untitled_T;
 
 /* External outputs (root outports fed by signals with default storage) */
 typedef struct {
-  real_T Output;                       /* '<Root>/Output' */
-  real_T Output1;                      /* '<Root>/Output1' */
-  real_T Output2;                      /* '<Root>/Output2' */
-  real_T Output3;                      /* '<Root>/Output3' */
+  uint16_T Output;                     /* '<Root>/Output' */
+  uint16_T Output1;                    /* '<Root>/Output1' */
+  uint16_T Output2;                    /* '<Root>/Output2' */
+  uint16_T Output3;                    /* '<Root>/Output3' */
+  uint16_T Output4;                    /* '<Root>/Output4' */
+  uint16_T Output5;                    /* '<Root>/Output5' */
+  uint16_T Output6;                    /* '<Root>/Output6' */
 } ExtY_untitled_T;
 
 /* Real-time Model Data Structure */
@@ -82,7 +84,6 @@ extern RT_MODEL_untitled_T *const untitled_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'untitled'
- * '<S1>'   : 'untitled/MATLAB Function'
  */
 #endif                                 /* RTW_HEADER_untitled_h_ */
 

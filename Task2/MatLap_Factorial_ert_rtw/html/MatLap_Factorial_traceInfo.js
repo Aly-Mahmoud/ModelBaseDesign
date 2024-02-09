@@ -1,0 +1,29 @@
+function RTW_rtwnameSIDMap() {
+	this.rtwnameHashMap = new Array();
+	this.sidHashMap = new Array();
+	this.rtwnameHashMap["<Root>"] = {sid: "MatLap_Factorial"};
+	this.sidHashMap["MatLap_Factorial"] = {rtwname: "<Root>"};
+	this.rtwnameHashMap["<S1>"] = {sid: "MatLap_Factorial:2"};
+	this.sidHashMap["MatLap_Factorial:2"] = {rtwname: "<S1>"};
+	this.rtwnameHashMap["<Root>/Input"] = {sid: "MatLap_Factorial:3"};
+	this.sidHashMap["MatLap_Factorial:3"] = {rtwname: "<Root>/Input"};
+	this.rtwnameHashMap["<Root>/MATLAB Function"] = {sid: "MatLap_Factorial:2"};
+	this.sidHashMap["MatLap_Factorial:2"] = {rtwname: "<Root>/MATLAB Function"};
+	this.rtwnameHashMap["<Root>/Output"] = {sid: "MatLap_Factorial:4"};
+	this.sidHashMap["MatLap_Factorial:4"] = {rtwname: "<Root>/Output"};
+	this.rtwnameHashMap["<S1>:1"] = {sid: "MatLap_Factorial:2:1"};
+	this.sidHashMap["MatLap_Factorial:2:1"] = {rtwname: "<S1>:1"};
+	this.rtwnameHashMap["<S1>:1:2"] = {sid: "MatLap_Factorial:2:1:2"};
+	this.sidHashMap["MatLap_Factorial:2:1:2"] = {rtwname: "<S1>:1:2"};
+	this.rtwnameHashMap["<S1>:1:4"] = {sid: "MatLap_Factorial:2:1:4"};
+	this.sidHashMap["MatLap_Factorial:2:1:4"] = {rtwname: "<S1>:1:4"};
+	this.rtwnameHashMap["<S1>:1:5"] = {sid: "MatLap_Factorial:2:1:5"};
+	this.sidHashMap["MatLap_Factorial:2:1:5"] = {rtwname: "<S1>:1:5"};
+	this.rtwnameHashMap["<S1>:1:6"] = {sid: "MatLap_Factorial:2:1:6"};
+	this.sidHashMap["MatLap_Factorial:2:1:6"] = {rtwname: "<S1>:1:6"};
+	this.rtwnameHashMap["<S1>:1:9"] = {sid: "MatLap_Factorial:2:1:9"};
+	this.sidHashMap["MatLap_Factorial:2:1:9"] = {rtwname: "<S1>:1:9"};
+	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
+	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
+}
+RTW_rtwnameSIDMap.instance = new RTW_rtwnameSIDMap();

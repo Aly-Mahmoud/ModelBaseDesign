@@ -1,0 +1,29 @@
+function RTW_rtwnameSIDMap() {
+	this.rtwnameHashMap = new Array();
+	this.sidHashMap = new Array();
+	this.rtwnameHashMap["<Root>"] = {sid: "FOR_Factorial"};
+	this.sidHashMap["FOR_Factorial"] = {rtwname: "<Root>"};
+	this.rtwnameHashMap["<S1>"] = {sid: "FOR_Factorial:9"};
+	this.sidHashMap["FOR_Factorial:9"] = {rtwname: "<S1>"};
+	this.rtwnameHashMap["<Root>/Input"] = {sid: "FOR_Factorial:40"};
+	this.sidHashMap["FOR_Factorial:40"] = {rtwname: "<Root>/Input"};
+	this.rtwnameHashMap["<Root>/For Iterator Subsystem"] = {sid: "FOR_Factorial:9"};
+	this.sidHashMap["FOR_Factorial:9"] = {rtwname: "<Root>/For Iterator Subsystem"};
+	this.rtwnameHashMap["<Root>/Output"] = {sid: "FOR_Factorial:41"};
+	this.sidHashMap["FOR_Factorial:41"] = {rtwname: "<Root>/Output"};
+	this.rtwnameHashMap["<S1>/Input"] = {sid: "FOR_Factorial:10"};
+	this.sidHashMap["FOR_Factorial:10"] = {rtwname: "<S1>/Input"};
+	this.rtwnameHashMap["<S1>/Constant"] = {sid: "FOR_Factorial:39"};
+	this.sidHashMap["FOR_Factorial:39"] = {rtwname: "<S1>/Constant"};
+	this.rtwnameHashMap["<S1>/Delay"] = {sid: "FOR_Factorial:38"};
+	this.sidHashMap["FOR_Factorial:38"] = {rtwname: "<S1>/Delay"};
+	this.rtwnameHashMap["<S1>/Divide"] = {sid: "FOR_Factorial:37"};
+	this.sidHashMap["FOR_Factorial:37"] = {rtwname: "<S1>/Divide"};
+	this.rtwnameHashMap["<S1>/For Iterator"] = {sid: "FOR_Factorial:11"};
+	this.sidHashMap["FOR_Factorial:11"] = {rtwname: "<S1>/For Iterator"};
+	this.rtwnameHashMap["<S1>/Output"] = {sid: "FOR_Factorial:20"};
+	this.sidHashMap["FOR_Factorial:20"] = {rtwname: "<S1>/Output"};
+	this.getSID = function(rtwname) { return this.rtwnameHashMap[rtwname];}
+	this.getRtwname = function(sid) { return this.sidHashMap[sid];}
+}
+RTW_rtwnameSIDMap.instance = new RTW_rtwnameSIDMap();
